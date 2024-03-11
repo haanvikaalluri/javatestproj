@@ -1,3 +1,6 @@
+Follow the steps to install sonarqube.
+https://www.fosstechnix.com/how-to-install-sonarqube-on-ubuntu-22-04-lts/
+
 Jenkins integration with sonarqube
 Install sonarqube plugin in jenkins
 Go to configure and add sonarqube server
