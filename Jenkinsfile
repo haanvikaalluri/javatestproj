@@ -1,1 +1,12 @@
 
+node {
+  stage('SCM') {
+    checkout scm
+  }
+  stage('SonarQube Analysis') {
+    def mvn = tool 'Default Maven';
+    withSonarQubeEnv() {
+      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=haanvikaalluri_javatestproj_AY4s53n99NsJu0Dn8kV0"
+    }
+  }
+}
