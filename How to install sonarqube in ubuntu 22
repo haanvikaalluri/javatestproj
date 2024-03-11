@@ -1,0 +1,37 @@
+Jenkins integration with sonarqube
+Install sonarqube plugin in jenkins
+Go to configure and add sonarqube server
+Exampe below:
+SonarQube servers
+If checked, job administrators will be able to inject a SonarQube server configuration as environment variables in the build.
+
+Environment variables
+SonarQube installations
+List of SonarQube installations
+Name
+SonarQube
+Server URL
+Default is http://localhost:9000
+http://44.212.64.107:9000/
+Server authentication token - not required we can set up in pom.xml file properties
+
+<properties>
+		
+		<sonar.host.url>http://44.212.64.107:9000/</sonar.host.url>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>Admin@123</sonar.password> 
+
+	</properties>
+
+Establish connection between sonarqube and github
+Create github app from deveoper setttings
+callbackurl - should be sonarqube url with port example http://serverIP:9000
+set the permissions 
+Checks - read and write 
+metadata - read
+pull request -read write
+create the app. 
+Once app created - go to install app and click on install button 
+Now go to app general tab client id and client secret set in the sonarqube . once authenticateion done set the jenkin job as folowing
+
+current project check the jenkinfile
